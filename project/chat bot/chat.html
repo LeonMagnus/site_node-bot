@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Projet 1</title>
+    <style>
+        html {
+            background-image: url(image/img2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .chat {
+            width: 1100px;
+            height: 500px;
+            margin: 35px 100px;
+            text-align: justify;
+            overflow: auto;
+            border-width: 3px;
+            border-color: #12b2b7;
+            border-style: double;
+            background-image: url(image/img1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<input type="text" size="70" placeholder="entre ton message" id="mes" />
+<input type="button" value="envoyer le message" id="send" onclick="sendmessage();" />
+    <div id="msg" class="chat"></div>
+    <script src="/socket.io/socket.io.js"></script>
+<script>
+    //conncetion avec le serveur
+    var socket = io.connect('http://192.168.1.9:8080');
+
+    //en va entre le code js pour aficher les valeur
+    //recupere les valeur ici
+    var name,passe;
+    //pour metre les valeur
+    var msg = document.getElementById('msg');
+    //pour le message
+    var send = document.getElementById("send");
+    var mes;
+    //pour recupere le pseudo de lautre page
+    //les event
+    socket.on('name', nom => {
+        name = nom;
+    });
+    socket.emit("del");
+
+
+    document.getElementById("mes").addEventListener("keypress", e => {
+        if (e.charCode == 13)
+            sendmessage();
+    })
+
+    function sendmessage() {
+        mes = document.getElementById("mes").value;
+        for (let i = 0; i < mes.length; i++)
+            if (mes.charCodeAt(i) != 32){
+                mes = mes.substring(i);
+                document.getElementById("mes").value = "";
+                masaff(name, mes)
+                socket.emit("message", { user:name,message: mes });
+                break;
+            }
+    }
+    socket.on("send", data => {
+        masaff(data.name,data.mes);
+    });
+    //fonction qui affiche le message
+    function masaff(name,mes) {
+        msg.innerHTML += `<div>${name}:${mes}</div>`;
+    }
+
+</script>
+</body>
+</html>

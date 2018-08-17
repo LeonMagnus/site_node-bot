@@ -1,0 +1,86 @@
+{
+  "1": {
+    "question": "l'eau bout a : </br>",
+    "n1": "1]100 degre</br>",
+    "n2": "2]200 degre</br>",
+    "n3": "3]250 degre",
+    "answer": "1"
+  },
+  "2": {
+    "question": "trouvez la suite logique 16,32,64: </br>",
+    "n1": "1]122</br>",
+    "n2": "2]123</br>",
+    "n3": "3]128",
+    "answer": "3"
+  },
+  "3": {
+    "question": "trouvez la suit de 1,3,5,7: </br>",
+    "n1": "1]7</br>",
+    "n2": "2]9</br>",
+    "n3": "3]10",
+    "answer": "2"
+  },
+  "4": {
+    "question": "l'annee lumiere est une unite musurent uniquement le temps:</br>",
+    "n1": "1]vrai</br>",
+    "n2": "2]faux</br>",
+    "n3": "3]autre",
+    "answer": "2"
+  },
+  "5": {
+    "question": "dans la celebre formule E=mc²,c represente la vitesse de la lumiere:</br>",
+    "n1": "1]vrai</br>",
+    "n2": "2]faux</br>",
+    "n3": "3]autre",
+    "answer": "1"
+  },
+  "6": {
+    "question": "titan,dont le diametre est proche de celui de mars,est un de 53 satellite de saturnes:</br>",
+    "n1": "1]vrai</br>",
+    "n2": "2]faux</br>",
+    "n3": "3]autre",
+    "answer": "1"
+  },
+  "7": {
+    "question": "lequel des elements suivants ne se rapporte pas a la voix IP:</br>",
+    "n1": "1]HDLC</br>",
+    "n2": "2]SIP</br>",
+    "n3": "3]SCCP",
+    "answer": "1"
+  },
+  "8": {
+    "question": "dans quelle couche du model osi fonctionne le protocole SSH:</br>",
+    "n1": "1]La couche transport</br>",
+    "n2": "2]La couche applicative</br>",
+    "n3": "3]La couche reseau",
+    "answer": "2"
+  },
+  "9": {
+    "question": "quel equipement reseau permet de reduire les problemes lies aux broadcasts:</br>",
+    "n1": "1]router</br>",
+    "n2": "2]Hub</br>",
+    "n3": "3]switch",
+    "answer": "1"
+  },
+  "10": {
+    "question": "lequel des protocole suivants utilise tcp:</br>",
+    "n1": "1]NTP</br>",
+    "n2": "2]TFTP</br>",
+    "n3": "3]NNTP",
+    "answer": "3"
+  },
+  "11": {
+    "question": "les base de donnes DNS sont de type: </br>",
+    "n1": "1]reseau</br>",
+    "n2": "2]hierachique</br>",
+    "n3": "3]relationnel",
+    "answer": "2"
+  },
+  "12": {
+    "question": "quel protocole de routage ne suporte pas les masque a longueurs variable: </br>",
+    "n1": "1]IRGP</br>",
+    "n2": "2]EIGRP</br>",
+    "n3": "3]OSPF",
+    "answer": "1"
+  }
+}

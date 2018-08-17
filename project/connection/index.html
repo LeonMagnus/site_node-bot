@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>connection</title>
+    <style>
+        .anonyme {
+            margin: 30px 0px 0px 70px;
+        }
+        .title1 {
+            margin: 50px 0px 0px 150px;
+        }
+        .title2 {
+            margin: 70px 0px 0px 150px;
+        }
+        body {
+            background-image: url(image/img3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .bo {
+            width: 45px;
+            height: 30px;
+            background-color: #808080;
+        }
+        .bo:hover {
+            width: 45px;
+            height: 30px;
+            background-color:red;
+        }
+        .name {
+            margin: 50px 0px 0px 35px;
+        }
+        .mdp {
+            margin: 50px 0px 0px 70px;
+        }
+        .ok {
+           margin: 40px 0px 0px 200px;
+        }
+        .co {
+            width: 450px;
+            height: 550px;
+            margin: 35px 450px;
+            text-align: justify;
+            border-width: 2px;
+            border-color: #808080;
+            border-style: solid;
+            background-image: url(image/img4.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <!--compte dutilisateur-->
+    <div class="co">
+        <!---si la perssone a un compte-->
+        <div class="title1"><span>Vous avez un compte:</span></div>
+        <div class="name"><span>nom de l'utilisateur: </span><input placeholder="username" type="text" id="user" /></div>
+        <div class="mdp"><span>mot de passe: </span><input placeholder="password" type="password" id="psw" /></div>
+        <div class="ok"><input class="bo" type="button" value="ok" id="ok1" /></div>
+        <!--si il a pas un compte-->
+        <div class="title2">connection on anonyme</div>
+        <div class="anonyme"><span>entre un nom: </span><input placeholder="name" type="text" id="name" /></div>
+        <div class="ok"><a href="/chat.html"><input class="bo" onclick="anonyme();" type="button" value="ok" id="ok2" /></a></div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://192.168.1.9:8080');
+        //recupere les valeur entre
+        //cote compte
+        /*
+        on attente
+        */
+        //cote anonyme
+        var name;
+        function anonyme() {
+            name = document.getElementById('name').value;
+            for (let i = 0; i <name.length; i++)
+                if (name.charCodeAt(i) != 32) {
+                    name = name.substring(i);
+                    socket.emit("new", name);
+                    break;
+                }
+        }
+
+    </script>
+</body>
+</html>
