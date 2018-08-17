@@ -38,12 +38,7 @@ this.cmd = function (data) {
 			data.rep = true;
 		return data;
 	}
-	//ajoute lien ver le site de igenergie + facebook
-	//ajoute notre structure qui est informatique + electronique + resaux
 	
-	//liste des projet + les participent 
-	//les memebre + leur poste 
-	//les base de la programation + les base de lelectronqiue + les base du resaux
 	
 	
 	
